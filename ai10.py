@@ -7,8 +7,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from datetime import datetime
 import pandas as pd
 
-# OpenAI API 설정
-openai.api_key = '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'
 
 # 데이터베이스 연결 설정 (초기화 시 한 번만 연결하고 재사용)
 @st.cache_resource
