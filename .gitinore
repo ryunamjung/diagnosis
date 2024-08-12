@@ -1,5 +1,5 @@
-# 환경 설정 파일
-.env
+# Ignore Streamlit secrets file
+.streamlit/secrets.toml
 
 # Python 기본 파일들
 *.pyc
