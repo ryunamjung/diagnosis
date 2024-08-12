@@ -6,9 +6,12 @@ import faiss
 from sklearn.feature_extraction.text import TfidfVectorizer
 from datetime import datetime
 import pandas as pd
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # .env 파일의 환경 변수를 로드
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
 
 # 데이터베이스 연결 설정 (초기화 시 한 번만 연결하고 재사용)
 @st.cache_resource
