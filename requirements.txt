@@ -1,0 +1,8 @@
+streamlit
+SpeechRecognition
+openai
+pyodbc
+faiss-cpu
+scikit-learn
+pandas
+python-dotenv

@@ -1,0 +1,51 @@
+# 환경 설정 파일
+.env
+
+# Python 기본 파일들
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+
+# Virtual Environment 디렉토리
+env/
+venv/
+ENV/
+venv.bak/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# MacOS 시스템 파일
+.DS_Store
+
+# VS Code 설정
+.vscode/
+*.code-workspace
+
+# Streamlit 캐시 디렉토리
+.streamlit/
+
+# PyTest 캐시
+.pytest_cache/
+
+# 로그 파일
+*.log
+
+# MyPy Cache
+.mypy_cache/
+
+# IDE들
+.idea/
+*.iml
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# 기타 시스템 파일
+Thumbs.db
