@@ -9,15 +9,24 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 
-load_dotenv()  # .env 파일의 환경 변수를 로드
+# .env 파일의 환경 변수를 로드
+load_dotenv()
 
+# OpenAI API 키 설정
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # 데이터베이스 연결 설정 (초기화 시 한 번만 연결하고 재사용)
 @st.cache_resource
 def get_database_connection():
     try:
-        conn = pyodbc.connect('DSN=CSI_DB')  # DSN 이름을 올바르게 입력했는지 확인
+        # 환경 변수에서 DATABASE_URL 가져오기
+        db_connection_string = os.getenv("DATABASE_URL")
+        if not db_connection_string:
+            st.error("DATABASE_URL environment variable is not set.")
+            return None
+        
+        # pyodbc.connect에 DATABASE_URL을 전달하여 연결 설정
+        conn = pyodbc.connect(db_connection_string)
         return conn
     except pyodbc.Error as e:
         st.error(f"Database connection error: {e}")
@@ -235,4 +244,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
