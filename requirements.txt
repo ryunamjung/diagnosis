@@ -1,0 +1,6 @@
+streamlit
+speechrecognition
+openai
+pyodbc
+scikit-learn
+pandas
