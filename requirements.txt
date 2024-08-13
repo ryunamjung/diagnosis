@@ -1,3 +1,4 @@
+python==3.11.4
 streamlit==1.25.0
 SpeechRecognition==3.10.0
 openai==0.28.0
