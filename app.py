@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import speech_recognition as sr
 import openai
@@ -8,14 +9,14 @@ from datetime import datetime
 import pandas as pd
 
 # OpenAI API 키 설정
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # 데이터베이스 연결 설정 (초기화 시 한 번만 연결하고 재사용)
 @st.cache_resource
 def get_database_connection():
     try:
-        # secrets.toml에서 DATABASE_URL 가져오기
-        db_connection_string = st.secrets["DATABASE_URL"]
+        # 환경 변수에서 DATABASE_URL 가져오기
+        db_connection_string = os.getenv("DATABASE_URL")
         
         # pyodbc.connect에 DATABASE_URL을 전달하여 연결 설정
         conn = pyodbc.connect(db_connection_string)
@@ -236,3 +237,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
